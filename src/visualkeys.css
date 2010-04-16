@@ -1,0 +1,40 @@
+#visualkeys {
+	margin:0;position:fixed;z-index:2147483647;bottom:-10px;width:99%;padding:0;left:0;
+} 
+
+#visualkeys * { /* don't let other styles overwrite me */
+	width:auto;height:auto;border:none;padding:0;margin:0;background:transparent;text-align:left;
+	outline:none;
+}
+
+#visualkeys em {
+	font:bold 4em georgia, serif;color:#555;text-shadow:0 0 2px black;margin:0 auto 20px 0;
+	width:99%;text-align:center;display:block;
+}
+
+#visualkeys ul {
+	background:gray;padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;
+	border-radius:8px;color:white;width:320px;margin:0 auto;border:2px solid #444;
+	-webkit-box-shadow: 1px 1px 5px #999;-moz-box-shadow: 1px 1px 5px #888;
+}
+
+#visualkeys ul li {
+	cursor:pointer;list-style:none;margin:0 0 6px 0;width:320px;text-shadow:1px 1px 1px #666;
+	padding:0;color:#eee;clear:left;font:normal 13px sans-serif;
+	
+}
+
+#visualkeys ul li i {
+	width:20px;padding:0 1px;float:left;text-align:center;color:gold;background:#555;
+	margin:0 5px 0 0;font:bold 20px monospace;-moz-border-radius:4px;-webkit-border-radius:4px;
+	border-radius:4px;text-shadow:1px 1px 1px black;border-right:1px solid #222;line-height:22px;
+	border-bottom:1px solid #222;
+}
+
+#visualkeys ul li:hover i {
+	background:black;
+}
+
+#visualkeys ul li b {
+	font:normal 18px sans-serif;color:white;
+}
