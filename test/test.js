@@ -50,4 +50,4 @@ test('', function(){
 	stop();
 	$.visualkeys(65);
 
-})
+});
