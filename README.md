@@ -36,12 +36,14 @@ way to do the job.
     hide : function(){/* will hide this menu item if this returns true */}
   }
 }
+```
 
 hide option is used as a context. To show, for example, a shortcut that
 exists on one page but not on the other, one could do $
 
+```js
 hide : function() { return ('page.selecor').length > 0; }
-
+```
 
 ## Also...
 - change the appearence of the menu by editing visualkeys.css
@@ -50,3 +52,5 @@ hide : function() { return ('page.selecor').length > 0; }
 - open the menu and mouse click a shortcut. It'll be executed.
 - as an alternative to ctrl+space you can use f9 or shift+space to open the menu.
 - unbind and remove visualkeys with $.visualkeys('remove').
+
+## Example
