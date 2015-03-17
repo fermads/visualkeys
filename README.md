@@ -48,5 +48,5 @@ hide : function() { return ('page.selector').length > 0; }
 - unbind and remove visualkeys with $.visualkeys('remove')
 
 ## Demo
-There is a demo at `demo/index.html`
+There is a example at `web/index.html`
 
