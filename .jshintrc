@@ -83,13 +83,7 @@
 
     // Custom Globals
     "globals"       : { // additional predefined global variables
-        "mocha":true,
-        "chai":true,
-        "should":true,
-        "expect":true,
         "describe":true,
-        "it":true,
-        "before":true,
-        "beforeEach":true
+        "QUnit":true
     }
 }
