@@ -4,9 +4,9 @@
 
 (function($) {
 
-  var item, visible, menu, fade;
+  var item, visible = false, menu, fade;
 
-  // handle pressed keys
+  // handle keypress
   function bind(e) {
     var key = e.keyCode;
 
@@ -14,7 +14,7 @@
       show();
       return false;
     }
-    else if(visible || (e.metaKey || e.altKey) && e.shiftKey) {
+    else if(visible || (e.metaKey || e.altKey) && e.ctrlKey) {
       run(key);
       return false;
     }
@@ -23,43 +23,71 @@
     }
   }
 
-  // initialize menu or show menu if already created
+  // show menu if already created or build it
   function show() {
-    visible = true;
-
     if(menu) { // menu already exists, just show it
+ 			for(var key in item) {
+ 				$('#visualkeys.key'+ key).removeClass('hide');
+ 				if(item[key].hide && item[key].hide())
+ 					$('#visualkeys.key'+ key).addClass('hide');
+ 			}
+
+ 			visible = true;
       menu.show();
-      return;
     }
+    else {
+    	build();
+    }
+  }
+
+  // build the menu, them show it
+  function build() {
+  	var content = '', key, i, hide;
 
     $('body')
       .remove('#visualkeys')
       .append('<div id="visualkeys"><em></em><ul></ul></div>');
 
-    var content = '', key, i;
     for(key in item) {
       i = item[key];
-      if(!i.hide) {
-        content += '<li onclick="$.visualkeys('+ key +')" class="key'
-          + key +'">'+ i.text +'</li>';
-      }
+
+      if(typeof parseInt(key, 10) != 'number')
+      	throw Error('key should ba a number representing a keyCode');
+
+      if(!i.text || typeof i.text != 'string')
+      	throw Error('text is required and should be a string');
+
+      if(!i.exec || typeof i.exec != 'function')
+      	throw Error('exec is required and should be a function');
+
+      if(i.hide && typeof i.hide != 'function')
+      	throw Error('hide should be a function and return true|false');
+      else
+      	hide = i.hide && i.hide() ? 'hide' : '';
+
+      content += '<li onclick="$.visualkeys('+ key +')" class="key'+ key
+      	+' '+ hide +'">'+ i.text +'</li>';
     }
 
     fade = $('#visualkeys em');
     menu = $('#visualkeys ul');
+
+    menu.hide();
     menu.html(content);
+
+    show();
   }
 
-  // run a selected shortcut and show the fade name
+  // run a selected shortcut and fade it's name
   function run(key) {
     if(!menu)
-      show();
+      build();
 
     visible = false;
     menu.hide();
     var i = item[key];
 
-    if(!i || i.hide)
+    if(!i)
       return;
 
     setTimeout(function(){
@@ -93,7 +121,7 @@
     if (typeof param == 'object') {
       init(param);
     }
-    else if (typeof param == 'number') { // menu mouse click
+    else if (typeof param == 'number') { // make menu clicks work too
       run(param);
     }
     else if (param == 'remove') {
