@@ -1,4 +1,4 @@
-# visualKeys
+# visualkeys
 
 VisualKeys is a jQuery plugin to configure shortcuts to users most used actions.
 It's best on web interfaces where users have to execute repetitive tasks giving
