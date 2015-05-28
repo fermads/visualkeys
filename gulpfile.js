@@ -8,7 +8,10 @@ gulp.task('default', function() {
   gulp.src('src/*.js')
     .pipe(uglify())
     .pipe(rename(package.name +'-'+ package.version +'.min.js'))
+    .pipe(gulp.dest('dist/'))
+    .pipe(rename('visualkeys.min.js'))
     .pipe(gulp.dest('dist/'));
+
   gulp.src('src/*.css')
     .pipe(minify({keepBreaks:true}))
     .pipe(rename(package.name +'-'+ package.version +'.min.css'))

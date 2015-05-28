@@ -1,9 +1,10 @@
 {
   "name": "visualkeys",
   "description": "Visual approach to keyboard shortcuts for jQuery",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "Fernando MAdS <fermads@gmail.com>",
   "keywords": [
+    "jquery",
     "plugin",
     "shortcuts",
     "keyboard"

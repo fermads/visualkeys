@@ -1,0 +1,27 @@
+{
+  "name": "jquery-visualkeys",
+  "version": "1.1.1",
+  "homepage": "https://github.com/fermads/visualkeys",
+  "authors": [
+    "Fernando MAdS <fermads@gmail.com>"
+  ],
+  "description": "Visual approach to keyboard shortcuts for jQuery",
+  "main": "dist/visualkeys.min.js",
+  "keywords": [
+    "jquery",
+    "plugin",
+    "shortcuts",
+    "keyboard"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "src",
+    "web",
+    ".gitignore",
+    ".jshintrc",
+    "bower.json",
+    "gulpfile.js",
+    "package.json",
+    "readme.md"
+  ]
+}
