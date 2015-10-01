@@ -1,13 +1,17 @@
 {
   "name": "visualkeys",
   "description": "Visual approach to keyboard shortcuts for jQuery",
-  "version": "1.1.0",
-  "author": "Fernando MAdS <fermads@gmail.com>",
+  "version": "1.1.1",
+  "author": "fermads",
+  "homepage": "https://github.com/fermads/visualkeys",
   "keywords": [
     "plugin",
     "shortcuts",
     "keyboard"
   ],
+  "bugs": {
+    "url": "https://github.com/fermads/visualkeys/issues"
+  },
   "devDependencies": {
     "gulp": "^3.8.11",
     "gulp-minify-css": "^1.0.0",
