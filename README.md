@@ -12,7 +12,7 @@ them a faster way to do the job.
   to your page
 
 ```html
-<link rel="visualkeys-[version].min.css" rel="stylesheet"/>
+<link href="visualkeys-[version].min.css" rel="stylesheet"/>
 <script src="jquery-[version].min.js"></script>
 <script src="visualkeys-[version].min.js"></script>
 ```
